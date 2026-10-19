@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJ Restaurant & Cafe</title>
+    <link rel="icon" type="image/webp" href="assets/aj_logo.webp">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css?v=1.4">
+</head>
+<body class="no-scroll">
+    <!-- Preloader Screen -->
+    <div id="preloader">
+        <div class="preloader-content">
+            <h1 class="preloader-title">Welcome to <br><span class="highlight">AJ Restaurant & Cafe</span></h1>
+            <div class="preloader-loader">
+                <div class="loader-bar"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="assets/aj_logo.webp" alt="AJ Restaurant & Cafe Logo" class="logo-brand-img">
+            <div class="logo-text-wrapper">
+                <span class="animated-football-header" title="Mahalaya Special">
+                    <img src="assets/mahalaya_web_run_icon.webp" alt="Mahalaya Run Icon" style="object-fit: contain; filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.6));">
+                </span>
+                <span class="logo-text">AJ Restaurant & Cafe</span>
+            </div>
+        </div>
+        <span class="rath-yatra-header-text">শুভ মহালয়া!</span>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="navbar-actions">
+            <!-- Mahalaya Special Button for Poster -->
+            <button class="fifa-btn" id="open-promo-modal-direct-btn" title="Show Mahalaya Special Poster">
+                <div class="fifa-container">
+                    <div class="fifa-magic-ring"></div>
+                    <img src="assets/mahalaya_web_icon.webp" alt="Mahalaya Special" class="fifa-svg" style="object-fit: contain;">
+                </div>
+            </button>
+            
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg banner-box">
+            <img src="assets/durga_puja_festival_special_banner.webp" alt="AJ Restaurant & Cafe Festival Special Banner" class="active">
+            <img src="assets/aj_restaurant_banner_2.webp" alt="AJ Restaurant & Cafe Banner 2">
+            <img src="assets/aj_banner_3.webp" alt="AJ Restaurant & Cafe Banner 3">
+            <img src="assets/aj_banner_4.webp" alt="AJ Restaurant & Cafe Banner 4">
+            <img src="assets/aj_banner_5.webp" alt="AJ Restaurant & Cafe Banner 5">
+            <div class="overlay"></div>
+        </div>
+        <!-- Click/Hover Zones for Banner Control -->
+        <div class="hero-nav-zone left-zone" title="Previous Image"></div>
+        <div class="hero-nav-zone right-zone" title="Next Image"></div>
+    </section>
+
+    <!-- Digital Restaurant Menu Section -->
+    <section id="menu" class="main-menu-section">
+        <div class="menu-header-wrapper">
+            <div class="menu-eyebrow-container">
+                <span class="menu-eyebrow">আমাদের স্পেশাল মেনু (Our Menu)</span>
+            </div>
+        </div>
+
+        <!-- Menu Category Filter Dropdown (Three-Dot Filter Menu) -->
+        <!-- Menu Filter and Zoom Controls Row -->
+        <div class="menu-filter-controls-row">
+            <div class="menu-filter-dropdown-wrapper" id="main-menu-filter-dropdown-wrapper">
+            <button type="button" class="menu-filter-dots-btn" id="main-menu-filter-dots-btn" aria-expanded="false" aria-haspopup="true" title="খাবার ফিল্টার করুন (Filter Menu)">
+                <span class="three-dots-icon-box">
+                    <i class="fas fa-ellipsis-v"></i>
+                </span>
+                <span class="current-filter-label" id="main-current-filter-label">
+                    <i class="fas fa-utensils"></i>
+                    <span>All Items</span>
+                </span>
+                <i class="fas fa-chevron-down filter-dropdown-arrow"></i>
+            </button>
+
+            <!-- Dropdown List of Category Filter Options -->
+            <div class="menu-filter-dropdown-menu" id="main-menu-filter-dropdown-menu">
+                <div class="menu-filter-dropdown-header">
+                    <span><i class="fas fa-filter"></i> Filter Category</span>
+                </div>
+                <div class="menu-filter-dropdown-list">
+                    <button type="button" class="menu-tab-btn active" data-category="all">
+                        <span class="tab-btn-content">
+                            <i class="fas fa-utensils tab-icon"></i>
+                            <span class="tab-title">All Items</span>
+                        </span>
+                        <i class="fas fa-check active-indicator-icon"></i>
+                    </button>
+                    <button type="button" class="menu-tab-btn" data-category="thali">
+                        <span class="tab-btn-content">
+                            <i class="fas fa-bowl-rice tab-icon"></i>
+                            <span class="tab-title">Bengali Thali</span>
+                        </span>
+                        <i class="fas fa-check active-indicator-icon"></i>
+                    </button>
+                    <button type="button" class="menu-tab-btn" data-category="snacks">
+                        <span class="tab-btn-content">
+                            <i class="fas fa-burger tab-icon"></i>
+                            <span class="tab-title">Breakfast & Snacks</span>
+                        </span>
+                        <i class="fas fa-check active-indicator-icon"></i>
+                    </button>
+                    <button type="button" class="menu-tab-btn" data-category="beverages">
+                        <span class="tab-btn-content">
+                            <i class="fas fa-mug-hot tab-icon"></i>
+                            <span class="tab-title">Tea & Coffee</span>
+                        </span>
+                        <i class="fas fa-check active-indicator-icon"></i>
+                    </button>
+                    <button type="button" class="menu-tab-btn" data-category="extras">
+                        <span class="tab-btn-content">
+                            <i class="fas fa-plate-wheat tab-icon"></i>
+                            <span class="tab-title">Sides & Extras</span>
+                        </span>
+                        <i class="fas fa-check active-indicator-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+            <!-- Zoom Full Menu Button on Right Side of Filter -->
+            <button type="button" class="menu-zoom-img-btn" id="open-full-menu-modal-btn" title="Open Complete Menu Card (সম্পূর্ণ মেনু)">
+                    <img src="assets/zoom_full_menu_icon.webp" alt="Zoom Full Menu" class="zoom-full-menu-img">
+                </button>
+        </div>
+
+        <!-- Menu Cards Horizontal Side-Scroll Wrapper -->
+        <div class="main-menu-scroll-wrapper">
+            <div class="main-menu-scroll-track" id="main-restaurant-menu-scroll">
+                <!-- 1. Veg Thali -->
+                <div class="food-menu-card" data-category="thali">
+                    <div class="food-card-badge pure-veg">Pure Veg</div>
+                    <div class="food-card-img-box"><img src="assets/menu_veg_thali.webp" alt="Veg Thali" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Veg Thali</h3>
+                        <span class="bengali-title">ভেজ থালি</span>
+                        <span class="food-price">₹150</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Veg%20Thali%20(₹150)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 2. Egg Thali -->
+                <div class="food-menu-card" data-category="thali">
+                    <div class="food-card-badge special">Favorite</div>
+                    <div class="food-card-img-box"><img src="assets/menu_egg_thali.webp" alt="Egg Thali" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Egg Thali</h3>
+                        <span class="bengali-title">ডিম থালি</span>
+                        <span class="food-price">₹180</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Egg%20Thali%20(₹180)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 3. Fish Thali (Rui) -->
+                <div class="food-menu-card" data-category="thali">
+                    <div class="food-card-badge popular">Popular</div>
+                    <div class="food-card-img-box"><img src="assets/menu_fish_thali_rui.webp" alt="Fish Thali (Rui)" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Fish Thali (Rui)</h3>
+                        <span class="bengali-title">রুই মাছ থালি</span>
+                        <span class="food-price">₹200</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Fish%20Thali%20Rui%20(₹200)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 4. Fish Thali (Katla) -->
+                <div class="food-menu-card" data-category="thali">
+                    <div class="food-card-badge popular">Popular</div>
+                    <div class="food-card-img-box"><img src="assets/menu_fish_thali_katla.webp" alt="Fish Thali (Katla)" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Fish Thali (Katla)</h3>
+                        <span class="bengali-title">কাতলা মাছ থালি</span>
+                        <span class="food-price">₹220</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Fish%20Thali%20Katla%20(₹220)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 5. Chicken Thali -->
+                <div class="food-menu-card" data-category="thali">
+                    <div class="food-card-badge bestseller">Bestseller</div>
+                    <div class="food-card-img-box"><img src="assets/menu_chicken_thali.webp" alt="Chicken Thali" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Chicken Thali</h3>
+                        <span class="bengali-title">চিকেন থালি</span>
+                        <span class="food-price">₹220</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Chicken%20Thali%20(₹220)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 6. Khichuri (Serves 4) -->
+                <div class="food-menu-card" data-category="thali">
+                    <div class="food-card-badge special">Serves 4</div>
+                    <div class="food-card-img-box"><img src="assets/menu_khichuri.webp" alt="Khichuri (Serves 4)" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Khichuri (Serves 4)</h3>
+                        <span class="bengali-title">খিচুড়ি (৪ জনের জন্য)</span>
+                        <span class="food-price">₹600</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Khichuri%20Serves%204%20(₹600)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 7. Black Tea -->
+                <div class="food-menu-card" data-category="beverages">
+                    <div class="food-card-badge hot">Hot</div>
+                    <div class="food-card-img-box"><img src="assets/menu_black_tea.webp" alt="Black Tea" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Black Tea</h3>
+                        <span class="bengali-title">ব্ল্যাক টি</span>
+                        <span class="food-price">₹25</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Black%20Tea%20(₹25)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 8. Milk Tea -->
+                <div class="food-menu-card" data-category="beverages">
+                    <div class="food-card-badge bestseller">Chai</div>
+                    <div class="food-card-img-box"><img src="assets/menu_milk_tea.webp" alt="Milk Tea" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Milk Tea</h3>
+                        <span class="bengali-title">মিল্ক টি (দুধ চা)</span>
+                        <span class="food-price">₹30</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Milk%20Tea%20(₹30)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 9. Green Tea -->
+                <div class="food-menu-card" data-category="beverages">
+                    <div class="food-card-badge pure-veg">Healthy</div>
+                    <div class="food-card-img-box"><img src="assets/menu_green_tea.webp" alt="Green Tea" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Green Tea</h3>
+                        <span class="bengali-title">গ্রিন টি</span>
+                        <span class="food-price">₹40</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Green%20Tea%20(₹40)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 10. Milk / Black Coffee -->
+                <div class="food-menu-card" data-category="beverages">
+                    <div class="food-card-badge popular">Hot</div>
+                    <div class="food-card-img-box"><img src="assets/menu_milk_black_coffee.webp" alt="Milk / Black Coffee" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Milk / Black Coffee</h3>
+                        <span class="bengali-title">মিল্ক / ব্ল্যাক কফি</span>
+                        <span class="food-price">₹60</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Milk%20Black%20Coffee%20(₹60)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 11. Premium Milk Coffee -->
+                <div class="food-menu-card" data-category="beverages">
+                    <div class="food-card-badge chef">Premium</div>
+                    <div class="food-card-img-box"><img src="assets/menu_premium_milk_coffee.webp" alt="Premium Milk Coffee" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Premium Milk Coffee</h3>
+                        <span class="bengali-title">প্রিমিয়াম মিল্ক কফি</span>
+                        <span class="food-price">₹100</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Premium%20Milk%20Coffee%20(₹100)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 12. Veg Maggie -->
+                <div class="food-menu-card" data-category="snacks">
+                    <div class="food-card-badge pure-veg">Veg</div>
+                    <div class="food-card-img-box"><img src="assets/menu_veg_maggie.webp" alt="Veg Maggie" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Veg Maggie</h3>
+                        <span class="bengali-title">ভেজ ম্যাগি</span>
+                        <span class="food-price">₹60</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Veg%20Maggie%20(₹60)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 13. Egg Maggie -->
+                <div class="food-menu-card" data-category="snacks">
+                    <div class="food-card-badge popular">Hot</div>
+                    <div class="food-card-img-box"><img src="assets/menu_egg_maggie.webp" alt="Egg Maggie" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Egg Maggie</h3>
+                        <span class="bengali-title">এগ ম্যাগি</span>
+                        <span class="food-price">₹80</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Egg%20Maggie%20(₹80)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 14. Cheese Maggie -->
+                <div class="food-menu-card" data-category="snacks">
+                    <div class="food-card-badge special">Special</div>
+                    <div class="food-card-img-box"><img src="assets/menu_cheese_maggie.webp" alt="Cheese Maggie" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Cheese Maggie</h3>
+                        <span class="bengali-title">চিজ ম্যাগি</span>
+                        <span class="food-price">₹100</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Cheese%20Maggie%20(₹100)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 15. Bread Omelette -->
+                <div class="food-menu-card" data-category="snacks">
+                    <div class="food-card-badge special">Breakfast</div>
+                    <div class="food-card-img-box"><img src="assets/menu_bread_omelette.webp" alt="Bread Omelette" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Bread Omelette</h3>
+                        <span class="bengali-title">ব্রেড ওমলেট</span>
+                        <span class="food-price">₹80</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Bread%20Omelette%20(₹80)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 16. Bread Jam / Butter -->
+                <div class="food-menu-card" data-category="snacks">
+                    <div class="food-card-badge popular">Breakfast</div>
+                    <div class="food-card-img-box"><img src="assets/menu_bread_jam_butter.webp" alt="Bread Jam / Butter" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Bread Jam / Butter</h3>
+                        <span class="bengali-title">ব্রেড জ্যাম / বাটার</span>
+                        <span class="food-price">₹70</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Bread%20Jam%20Butter%20(₹70)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 17. Chicken Pocoda (8P) -->
+                <div class="food-menu-card" data-category="snacks">
+                    <div class="food-card-badge popular">8 Pcs</div>
+                    <div class="food-card-img-box"><img src="assets/menu_chicken_pocoda.webp" alt="Chicken Pocoda (8P)" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Chicken Pocoda (8P)</h3>
+                        <span class="bengali-title">চিকেন পকোড়া (8P)</span>
+                        <span class="food-price">₹200</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Chicken%20Pocoda%208P%20(₹200)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 18. Paneer Pocoda (8P) -->
+                <div class="food-menu-card" data-category="snacks">
+                    <div class="food-card-badge pure-veg">8 Pcs</div>
+                    <div class="food-card-img-box"><img src="assets/menu_paneer_pocoda.webp" alt="Paneer Pocoda (8P)" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Paneer Pocoda (8P)</h3>
+                        <span class="bengali-title">পনির পকোড়া (8P)</span>
+                        <span class="food-price">₹200</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Paneer%20Pocoda%208P%20(₹200)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 19. Extra Dahi -->
+                <div class="food-menu-card" data-category="extras">
+                    <div class="food-card-badge pure-veg">Fresh</div>
+                    <div class="food-card-img-box"><img src="assets/menu_extra_dahi.webp" alt="Extra Dahi" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Extra Dahi</h3>
+                        <span class="bengali-title">এক্সট্রা দই</span>
+                        <span class="food-price">₹80</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Extra%20Dahi%20(₹80)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 20. Special Dahi Lassi (Sweet) -->
+                <div class="food-menu-card" data-category="beverages">
+                    <div class="food-card-badge special">Sweet Lassi</div>
+                    <div class="food-card-img-box"><img src="assets/menu_special_dahi_lassi.webp" alt="Special Dahi Lassi (Sweet)" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Special Dahi Lassi (Sweet)</h3>
+                        <span class="bengali-title">স্পেশাল দই লস্যি (Sweet)</span>
+                        <span class="food-price">₹100</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Special%20Dahi%20Lassi%20(₹100)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 21. One Glass Milk -->
+                <div class="food-menu-card" data-category="beverages">
+                    <div class="food-card-badge pure-veg">Fresh Milk</div>
+                    <div class="food-card-img-box"><img src="assets/menu_one_glass_milk.webp" alt="One Glass Milk" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">One Glass Milk</h3>
+                        <span class="bengali-title">এক গ্লাস দুধ</span>
+                        <span class="food-price">₹60</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20One%20Glass%20Milk%20(₹60)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 22. Lemon Water -->
+                <div class="food-menu-card" data-category="beverages">
+                    <div class="food-card-badge pure-veg">Refreshing</div>
+                    <div class="food-card-img-box"><img src="assets/menu_lemon_water.webp" alt="Lemon Water" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Lemon Water</h3>
+                        <span class="bengali-title">লেমন ওয়াটার</span>
+                        <span class="food-price">₹50</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Lemon%20Water%20(₹50)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 23. Extra Chicken (4P) -->
+                <div class="food-menu-card" data-category="extras">
+                    <div class="food-card-badge popular">4 Pcs</div>
+                    <div class="food-card-img-box"><img src="assets/menu_extra_chicken.webp" alt="Extra Chicken (4P)" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Extra Chicken (4P)</h3>
+                        <span class="bengali-title">চিকেন কারি (4P)</span>
+                        <span class="food-price">₹200</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Extra%20Chicken%204P%20(₹200)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 24. Green Salad -->
+                <div class="food-menu-card" data-category="extras">
+                    <div class="food-card-badge pure-veg">Fresh</div>
+                    <div class="food-card-img-box"><img src="assets/menu_green_salad.webp" alt="Green Salad" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Green Salad</h3>
+                        <span class="bengali-title">গ্রিন স্যালাড</span>
+                        <span class="food-price">₹100</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Green%20Salad%20(₹100)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 25. Extra Fish (1P) -->
+                <div class="food-menu-card" data-category="extras">
+                    <div class="food-card-badge popular">1 Pc</div>
+                    <div class="food-card-img-box"><img src="assets/menu_extra_fish.webp" alt="Extra Fish (1P)" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Extra Fish (1P)</h3>
+                        <span class="bengali-title">মাছ ১ পিস</span>
+                        <span class="food-price">₹100</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Extra%20Fish%201P%20(₹100)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 26. Extra Egg (2P) -->
+                <div class="food-menu-card" data-category="extras">
+                    <div class="food-card-badge special">2 Pcs</div>
+                    <div class="food-card-img-box"><img src="assets/menu_extra_egg.webp" alt="Extra Egg (2P)" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Extra Egg (2P)</h3>
+                        <span class="bengali-title">ডিম (২ পিস)</span>
+                        <span class="food-price">₹50</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Extra%20Egg%202P%20(₹50)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 27. Extra Rice -->
+                <div class="food-menu-card" data-category="extras">
+                    <div class="food-card-badge popular">1 Portion</div>
+                    <div class="food-card-img-box"><img src="assets/menu_extra_rice.webp" alt="Extra Rice" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Extra Rice</h3>
+                        <span class="bengali-title">এক্সট্রা ভাত</span>
+                        <span class="food-price">₹50</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Extra%20Rice%20(₹50)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 28. Roti / Papad / Biscuit -->
+                <div class="food-menu-card" data-category="extras">
+                    <div class="food-card-badge pure-veg">Per Pc</div>
+                    <div class="food-card-img-box"><img src="assets/menu_roti_papad_biscuit.webp" alt="Roti / Papad / Biscuit" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Roti / Papad / Biscuit</h3>
+                        <span class="bengali-title">রুটি / পাঁপড় / বিস্কুট</span>
+                        <span class="food-price">₹10</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Roti%20Papad%20Biscuit%20(₹10)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 29. Extra Sabji / Dal / Vaji -->
+                <div class="food-menu-card" data-category="extras">
+                    <div class="food-card-badge pure-veg">Side Bowl</div>
+                    <div class="food-card-img-box"><img src="assets/menu_extra_sabji_dal_vaji.webp" alt="Extra Sabji / Dal / Vaji" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Extra Sabji / Dal / Vaji</h3>
+                        <span class="bengali-title">সবজি / ডাল / ভাজি</span>
+                        <span class="food-price">₹30</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Extra%20Sabji%20Dal%20Vaji%20(₹30)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 30. Butter Dal Fry -->
+                <div class="food-menu-card" data-category="extras">
+                    <div class="food-card-badge chef">Chef Special</div>
+                    <div class="food-card-img-box"><img src="assets/menu_butter_dal_fry.webp" alt="Butter Dal Fry" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Butter Dal Fry</h3>
+                        <span class="bengali-title">বাটার ডাল ফ্রাই</span>
+                        <span class="food-price">₹150</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Butter%20Dal%20Fry%20(₹150)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 31. Tarka (Egg / Veg) -->
+                <div class="food-menu-card" data-category="extras">
+                    <div class="food-card-badge popular">Popular</div>
+                    <div class="food-card-img-box"><img src="assets/menu_tarka_egg_veg.webp" alt="Tarka (Egg / Veg)" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Tarka (Egg / Veg)</h3>
+                        <span class="bengali-title">তরকা (এগ / ভেজ)</span>
+                        <span class="food-price">₹150</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Tarka%20Egg%20Veg%20(₹150)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 32. Extra Misti -->
+                <div class="food-menu-card" data-category="extras">
+                    <div class="food-card-badge pure-veg">Sweet</div>
+                    <div class="food-card-img-box"><img src="assets/menu_extra_misti.webp" alt="Extra Misti" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Extra Misti</h3>
+                        <span class="bengali-title">এক্সট্রা মিষ্টি</span>
+                        <span class="food-price">₹20</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Extra%20Misti%20(₹20)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 33. Plain Rice (Without Thali) -->
+                <div class="food-menu-card" data-category="extras">
+                    <div class="food-card-badge pure-veg">1 Plate</div>
+                    <div class="food-card-img-box"><img src="assets/menu_plain_rice_without_thali.webp" alt="Plain Rice (Without Thali)" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Plain Rice (Without Thali)</h3>
+                        <span class="bengali-title">প্লেন রাইস (থালি ছাড়া)</span>
+                        <span class="food-price">₹80</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Plain%20Rice%20Without%20Thali%20(₹80)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 34. Extra Mutton (4P) -->
+                <div class="food-menu-card" data-category="extras">
+                    <div class="food-card-badge special">4 Pcs</div>
+                    <div class="food-card-img-box"><img src="assets/menu_extra_mutton.webp" alt="Extra Mutton (4P)" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Extra Mutton (4P)</h3>
+                        <span class="bengali-title">মটন (স্পেশাল অর্ডার)</span>
+                        <span class="food-price">₹380</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Extra%20Mutton%204P%20(₹380)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section (Photo Gallery) -->
+    <section id="reviews" class="reviews-section">
+        <h2 class="section-title">Customer Review Photos</h2>
+        <div class="reviews-slider-container">
+            <div class="reviews-slider">
+                <div class="review-slide active">
+                    <img src="assets/review_1.webp" alt="Customer Review 1">
+                </div>
+                <div class="review-slide">
+                    <img src="assets/review_2.webp" alt="Customer Review 2">
+                </div>
+                <div class="review-slide">
+                    <img src="assets/review_3.webp" alt="Customer Review 3">
+                </div>
+                <div class="review-slide">
+                    <img src="assets/aj_banner_3.webp" alt="Customer Review 4">
+                </div>
+            </div>
+            
+            <!-- Slider Controls -->
+            <button class="slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+            
+            <!-- Slider Dots -->
+            <div class="slider-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+                <span class="dot" data-index="3"></span>
+            </div>
+        </div>
+        <div class="reviews-cta-wrapper">
+            <button type="button" class="modern-upload-review-btn" id="open-upload-review-btn" title="Upload Customer Review Photo">
+                <span class="upload-icon-badge"><i class="fas fa-camera"></i></span>
+                <span class="upload-btn-text">Upload Your Photo</span>
+                <span class="upload-sparkle-badge"><i class="fas fa-plus"></i></span>
+            </button>
+            <a href="https://maps.app.goo.gl/2kXLeu7dPHw4FNnr5" target="_blank" class="modern-maps-btn" title="Open Google Maps Gallery">
+                <span class="maps-icon-badge"><i class="fas fa-map-marked-alt"></i></span>
+                <span class="maps-btn-text">View All Photos on Google Maps</span>
+                <span class="maps-arrow-circle"><i class="fas fa-arrow-right"></i></span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <section id="contact" class="contact-section">
+        <h2 class="section-title">Contact & Socials</h2>
+        <div class="contact-container glassmorphism">
+            <div class="contact-info">
+                <h2>Visit Us</h2>
+                <div class="info-item">
+                    <a href="https://maps.app.goo.gl/J9uGgiv1W8dAHkCU7" target="_blank" style="color: inherit; text-decoration: none; display: flex; align-items: center; gap: 15px;">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Hulorghat, Sree, Mayapur, Nabadwip, West Bengal 741313</p>
+                    </a>
+                </div>
+                <div class="info-item">
+                    <a href="tel:+918250028902" style="color: inherit; text-decoration: none; display: flex; align-items: center; gap: 15px;">
+                        <i class="fas fa-phone-alt"></i>
+                        <p>+91 8250028902</p>
+                    </a>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>hello@ajrestaurant.com</p>
+                </div>
+            </div>
+            <div class="social-links">
+                <h2>Follow Us</h2>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    <a href="https://wa.me/918250028902" target="_blank" class="social-icon" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://maps.app.goo.gl/J9uGgiv1W8dAHkCU7" target="_blank" class="social-icon"><i class="fas fa-map-marker-alt"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 AJ Restaurant & Cafe. Made with Dripza</p>
+    </footer>
+
+    <!-- Message Panel Overlay -->
+    <div class="msg-panel-overlay" id="msg-panel-overlay"></div>
+
+    <!-- Slide-out Message Panel -->
+    <div class="msg-panel" id="msg-panel">
+        <button class="close-msg-panel-btn" id="close-msg-panel-btn">&times;</button>
+        <div class="msg-panel-header">
+            <h2>Send a Message</h2>
+            <p>We'd love to hear from you! Write to us and we'll save it to our sheet.</p>
+        </div>
+        <form id="msg-panel-form">
+            <div class="form-group">
+                <label for="msg-name">Your Name</label>
+                <input type="text" id="msg-name" required placeholder="Enter your full name">
+            </div>
+            <div class="form-group">
+                <label for="msg-email">Email or Phone</label>
+                <input type="text" id="msg-email" required placeholder="Enter email or phone number">
+            </div>
+            <div class="form-group">
+                <label for="msg-content">Message</label>
+                <textarea id="msg-content" rows="5" required placeholder="Type your message here..."></textarea>
+            </div>
+            <button type="submit" class="submit-msg-btn" id="submit-msg-btn">
+                <span>Send Message</span> <i class="fas fa-paper-plane"></i>
+            </button>
+        </form>
+        <div class="msg-status-container" id="msg-status-container"></div>
+    </div>
+
+    <!-- Full Menu Interactive Modal -->
+    <div class="full-menu-modal" id="full-menu-modal" aria-hidden="true">
+        <div class="full-menu-modal-overlay" id="full-menu-modal-overlay"></div>
+        <div class="full-menu-modal-container">
+            <!-- Modal Sticky Top Header Container (Header + Hero Title + Search + Category Tabs) -->
+            <div class="full-menu-modal-top-section">
+                <!-- Modal Header -->
+                <div class="full-menu-modal-header">
+                    <div class="full-menu-modal-header-left">
+                        <button class="menu-modal-close-btn" id="close-full-menu-modal-btn" aria-label="Close Full Menu">
+                            <i class="fas fa-arrow-left"></i> <span>Back</span>
+                        </button>
+                        <div class="full-menu-modal-title">
+                            AJ Restaurant <span>& Cafe</span>
+                        </div>
+                    </div>
+                    <div class="full-menu-modal-header-right">
+                        <a href="#modal-order-timings" class="menu-modal-timing-btn" id="modal-timing-btn" title="Order Timings">
+                            <i class="fas fa-clock"></i> <span>Timings</span>
+                        </a>
+                        <a href="tel:6295982636" class="menu-modal-call-btn">
+                            <i class="fas fa-phone-alt"></i> <span>6295982636</span>
+                        </a>
+                        <button class="menu-modal-close-icon-btn" id="close-full-menu-icon-btn" aria-label="Close">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Modal Hero Header -->
+                <div class="full-menu-hero">
+                    <h1>Complete Menu Card <span class="bengali-heading">আমাদের সম্পূর্ণ ডিজিটাল মেনু</span></h1>
+                </div>
+
+                <!-- Search Bar & Category Filter Tabs -->
+                <div class="menu-control-bar">
+                    <!-- Modal Category Filter Dropdown (Left Side) -->
+                    <div class="menu-filter-dropdown-wrapper" id="modal-menu-filter-dropdown-wrapper">
+                        <button type="button" class="menu-filter-dots-btn" id="modal-menu-filter-dots-btn" aria-expanded="false" aria-haspopup="true" title="খাবার ফিল্টার করুন (Filter Menu)">
+                            <span class="three-dots-icon-box">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </span>
+                            <span class="current-filter-label" id="modal-current-filter-label">
+                                <i class="fas fa-utensils"></i>
+                                <span>All Items</span>
+                            </span>
+                            <i class="fas fa-chevron-down filter-dropdown-arrow"></i>
+                        </button>
+
+                        <!-- Dropdown List of Category Filter Options -->
+                        <div class="menu-filter-dropdown-menu" id="modal-menu-filter-dropdown-menu">
+                            <div class="menu-filter-dropdown-header">
+                                <span><i class="fas fa-filter"></i> Filter Category</span>
+                            </div>
+                            <div class="menu-filter-dropdown-list">
+                                <button type="button" class="menu-tab-btn active" data-category="all">
+                                    <span class="tab-btn-content">
+                                        <i class="fas fa-utensils tab-icon"></i>
+                                        <span class="tab-title">All Items</span>
+                                    </span>
+                                    <i class="fas fa-check active-indicator-icon"></i>
+                                </button>
+                                <button type="button" class="menu-tab-btn" data-category="thali">
+                                    <span class="tab-btn-content">
+                                        <i class="fas fa-bowl-rice tab-icon"></i>
+                                        <span class="tab-title">Bengali Thali</span>
+                                    </span>
+                                    <i class="fas fa-check active-indicator-icon"></i>
+                                </button>
+                                <button type="button" class="menu-tab-btn" data-category="snacks">
+                                    <span class="tab-btn-content">
+                                        <i class="fas fa-burger tab-icon"></i>
+                                        <span class="tab-title">Breakfast & Snacks</span>
+                                    </span>
+                                    <i class="fas fa-check active-indicator-icon"></i>
+                                </button>
+                                <button type="button" class="menu-tab-btn" data-category="beverages">
+                                    <span class="tab-btn-content">
+                                        <i class="fas fa-mug-hot tab-icon"></i>
+                                        <span class="tab-title">Tea & Coffee</span>
+                                    </span>
+                                    <i class="fas fa-check active-indicator-icon"></i>
+                                </button>
+                                <button type="button" class="menu-tab-btn" data-category="extras">
+                                    <span class="tab-btn-content">
+                                        <i class="fas fa-plate-wheat tab-icon"></i>
+                                        <span class="tab-title">Sides & Extras</span>
+                                    </span>
+                                    <i class="fas fa-check active-indicator-icon"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Search Box on Right Side -->
+                    <div class="search-box-wrapper">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="modal-menu-search-input" placeholder="খাবারের নাম লিখে খুঁজুন (Search dishes...)" autocomplete="off" enterkeyhint="search">
+                        <button type="button" id="modal-menu-search-clear" class="search-clear-btn" aria-label="Clear search" title="মুছে ফেলুন (Clear)">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="full-menu-modal-body">
+                <!-- Complete Menu Card Grid -->
+                <div class="compact-menu-grid-container">
+                    <div class="compact-grid" id="modal-full-menu-grid">
+                <!-- 1. Veg Thali -->
+                <div class="food-menu-card" data-category="thali" data-keywords="veg thali niramish thali veg thali rice dal sabji veg khana 150">
+                    <div class="food-card-badge pure-veg">Pure Veg</div>
+                    <div class="food-card-img-box"><img src="assets/menu_veg_thali.webp" alt="Veg Thali" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Veg Thali</h3>
+                        <span class="bengali-title">ভেজ থালি</span>
+                        <span class="food-price">₹150</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Veg%20Thali%20(₹150)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 2. Egg Thali -->
+                <div class="food-menu-card" data-category="thali" data-keywords="egg thali dimer thali dim kosha rice dal thali 180">
+                    <div class="food-card-badge special">Favorite</div>
+                    <div class="food-card-img-box"><img src="assets/menu_egg_thali.webp" alt="Egg Thali" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Egg Thali</h3>
+                        <span class="bengali-title">ডিম থালি</span>
+                        <span class="food-price">₹180</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Egg%20Thali%20(₹180)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 3. Fish Thali (Rui) -->
+                <div class="food-menu-card" data-category="thali" data-keywords="fish thali macher thali rui mach rice dal thali 200">
+                    <div class="food-card-badge popular">Popular</div>
+                    <div class="food-card-img-box"><img src="assets/menu_fish_thali_rui.webp" alt="Fish Thali (Rui)" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Fish Thali (Rui)</h3>
+                        <span class="bengali-title">রুই মাছ থালি</span>
+                        <span class="food-price">₹200</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Fish%20Thali%20Rui%20(₹200)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 4. Fish Thali (Katla) -->
+                <div class="food-menu-card" data-category="thali" data-keywords="fish thali macher thali katla mach rice dal thali 220">
+                    <div class="food-card-badge popular">Popular</div>
+                    <div class="food-card-img-box"><img src="assets/menu_fish_thali_katla.webp" alt="Fish Thali (Katla)" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Fish Thali (Katla)</h3>
+                        <span class="bengali-title">কাতলা মাছ থালি</span>
+                        <span class="food-price">₹220</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Fish%20Thali%20Katla%20(₹220)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 5. Chicken Thali -->
+                <div class="food-menu-card" data-category="thali" data-keywords="chicken thali murgir mangsho chicken kosha rice dal thali 220">
+                    <div class="food-card-badge bestseller">Bestseller</div>
+                    <div class="food-card-img-box"><img src="assets/menu_chicken_thali.webp" alt="Chicken Thali" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Chicken Thali</h3>
+                        <span class="bengali-title">চিকেন থালি</span>
+                        <span class="food-price">₹220</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Chicken%20Thali%20(₹220)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 6. Khichuri (Serves 4) -->
+                <div class="food-menu-card" data-category="thali" data-keywords="khichuri khichdi bhog serves 4 persons family combo 600">
+                    <div class="food-card-badge special">Serves 4</div>
+                    <div class="food-card-img-box"><img src="assets/menu_khichuri.webp" alt="Khichuri (Serves 4)" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Khichuri (Serves 4)</h3>
+                        <span class="bengali-title">খিচুড়ি (৪ জনের জন্য)</span>
+                        <span class="food-price">₹600</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Khichuri%20Serves%204%20(₹600)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 7. Black Tea -->
+                <div class="food-menu-card" data-category="beverages" data-keywords="black tea lal cha red tea beverage 25">
+                    <div class="food-card-badge hot">Hot</div>
+                    <div class="food-card-img-box"><img src="assets/menu_black_tea.webp" alt="Black Tea" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Black Tea</h3>
+                        <span class="bengali-title">ব্ল্যাক টি</span>
+                        <span class="food-price">₹25</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Black%20Tea%20(₹25)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 8. Milk Tea -->
+                <div class="food-menu-card" data-category="beverages" data-keywords="milk tea doodh cha chai milk tea beverage 30">
+                    <div class="food-card-badge bestseller">Chai</div>
+                    <div class="food-card-img-box"><img src="assets/menu_milk_tea.webp" alt="Milk Tea" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Milk Tea</h3>
+                        <span class="bengali-title">মিল্ক টি (দুধ চা)</span>
+                        <span class="food-price">₹30</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Milk%20Tea%20(₹30)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 9. Green Tea -->
+                <div class="food-menu-card" data-category="beverages" data-keywords="green tea detox herbal tea healthy beverage 40">
+                    <div class="food-card-badge pure-veg">Healthy</div>
+                    <div class="food-card-img-box"><img src="assets/menu_green_tea.webp" alt="Green Tea" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Green Tea</h3>
+                        <span class="bengali-title">গ্রিন টি</span>
+                        <span class="food-price">₹40</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Green%20Tea%20(₹40)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 10. Milk / Black Coffee -->
+                <div class="food-menu-card" data-category="beverages" data-keywords="milk black coffee hot coffee espresso cafe 60">
+                    <div class="food-card-badge popular">Hot</div>
+                    <div class="food-card-img-box"><img src="assets/menu_milk_black_coffee.webp" alt="Milk / Black Coffee" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Milk / Black Coffee</h3>
+                        <span class="bengali-title">মিল্ক / ব্ল্যাক কফি</span>
+                        <span class="food-price">₹60</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Milk%20Black%20Coffee%20(₹60)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 11. Premium Milk Coffee -->
+                <div class="food-menu-card" data-category="beverages" data-keywords="premium milk coffee cappuccino latte creamy coffee 100">
+                    <div class="food-card-badge chef">Premium</div>
+                    <div class="food-card-img-box"><img src="assets/menu_premium_milk_coffee.webp" alt="Premium Milk Coffee" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Premium Milk Coffee</h3>
+                        <span class="bengali-title">প্রিমিয়াম মিল্ক কফি</span>
+                        <span class="food-price">₹100</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Premium%20Milk%20Coffee%20(₹100)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 12. Veg Maggie -->
+                <div class="food-menu-card" data-category="snacks" data-keywords="veg maggie noodles snacks masala maggie 60">
+                    <div class="food-card-badge pure-veg">Veg</div>
+                    <div class="food-card-img-box"><img src="assets/menu_veg_maggie.webp" alt="Veg Maggie" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Veg Maggie</h3>
+                        <span class="bengali-title">ভেজ ম্যাগি</span>
+                        <span class="food-price">₹60</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Veg%20Maggie%20(₹60)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 13. Egg Maggie -->
+                <div class="food-menu-card" data-category="snacks" data-keywords="egg maggie dim noodles egg masala maggie 80">
+                    <div class="food-card-badge popular">Hot</div>
+                    <div class="food-card-img-box"><img src="assets/menu_egg_maggie.webp" alt="Egg Maggie" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Egg Maggie</h3>
+                        <span class="bengali-title">এগ ম্যাগি</span>
+                        <span class="food-price">₹80</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Egg%20Maggie%20(₹80)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 14. Cheese Maggie -->
+                <div class="food-menu-card" data-category="snacks" data-keywords="cheese maggie cheesy noodles snacks 100">
+                    <div class="food-card-badge special">Special</div>
+                    <div class="food-card-img-box"><img src="assets/menu_cheese_maggie.webp" alt="Cheese Maggie" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Cheese Maggie</h3>
+                        <span class="bengali-title">চিজ ম্যাগি</span>
+                        <span class="food-price">₹100</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Cheese%20Maggie%20(₹100)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 15. Bread Omelette -->
+                <div class="food-menu-card" data-category="snacks" data-keywords="bread omelette dim toast breakfast snacks 80">
+                    <div class="food-card-badge special">Breakfast</div>
+                    <div class="food-card-img-box"><img src="assets/menu_bread_omelette.webp" alt="Bread Omelette" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Bread Omelette</h3>
+                        <span class="bengali-title">ব্রেড ওমলেট</span>
+                        <span class="food-price">₹80</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Bread%20Omelette%20(₹80)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 16. Bread Jam / Butter -->
+                <div class="food-menu-card" data-category="snacks" data-keywords="bread jam butter toast breakfast snacks 70">
+                    <div class="food-card-badge popular">Breakfast</div>
+                    <div class="food-card-img-box"><img src="assets/menu_bread_jam_butter.webp" alt="Bread Jam / Butter" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Bread Jam / Butter</h3>
+                        <span class="bengali-title">ব্রেড জ্যাম / বাটার</span>
+                        <span class="food-price">₹70</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Bread%20Jam%20Butter%20(₹70)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 17. Chicken Pocoda (8P) -->
+                <div class="food-menu-card" data-category="snacks" data-keywords="chicken pocoda pakora pakoda 8p snacks non veg 200">
+                    <div class="food-card-badge popular">8 Pcs</div>
+                    <div class="food-card-img-box"><img src="assets/menu_chicken_pocoda.webp" alt="Chicken Pocoda (8P)" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Chicken Pocoda (8P)</h3>
+                        <span class="bengali-title">চিকেন পকোড়া (8P)</span>
+                        <span class="food-price">₹200</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Chicken%20Pocoda%208P%20(₹200)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 18. Paneer Pocoda (8P) -->
+                <div class="food-menu-card" data-category="snacks" data-keywords="paneer pocoda pakora pakoda 8p snacks veg 200">
+                    <div class="food-card-badge pure-veg">8 Pcs</div>
+                    <div class="food-card-img-box"><img src="assets/menu_paneer_pocoda.webp" alt="Paneer Pocoda (8P)" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Paneer Pocoda (8P)</h3>
+                        <span class="bengali-title">পনির পকোড়া (8P)</span>
+                        <span class="food-price">₹200</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Paneer%20Pocoda%208P%20(₹200)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 19. Extra Dahi -->
+                <div class="food-menu-card" data-category="extras" data-keywords="extra dahi curd sweet fresh yogurt side 80">
+                    <div class="food-card-badge pure-veg">Fresh</div>
+                    <div class="food-card-img-box"><img src="assets/menu_extra_dahi.webp" alt="Extra Dahi" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Extra Dahi</h3>
+                        <span class="bengali-title">এক্সট্রা দই</span>
+                        <span class="food-price">₹80</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Extra%20Dahi%20(₹80)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 20. Special Dahi Lassi (Sweet) -->
+                <div class="food-menu-card" data-category="beverages" data-keywords="special dahi lassi sweet lassi cold beverage curd drink 100">
+                    <div class="food-card-badge special">Sweet Lassi</div>
+                    <div class="food-card-img-box"><img src="assets/menu_special_dahi_lassi.webp" alt="Special Dahi Lassi (Sweet)" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Special Dahi Lassi (Sweet)</h3>
+                        <span class="bengali-title">স্পেশাল দই লস্যি (Sweet)</span>
+                        <span class="food-price">₹100</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Special%20Dahi%20Lassi%20(₹100)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 21. One Glass Milk -->
+                <div class="food-menu-card" data-category="beverages" data-keywords="one glass milk doodh hot warm milk beverage 60">
+                    <div class="food-card-badge pure-veg">Fresh Milk</div>
+                    <div class="food-card-img-box"><img src="assets/menu_one_glass_milk.webp" alt="One Glass Milk" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">One Glass Milk</h3>
+                        <span class="bengali-title">এক গ্লাস দুধ</span>
+                        <span class="food-price">₹60</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20One%20Glass%20Milk%20(₹60)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 22. Lemon Water -->
+                <div class="food-menu-card" data-category="beverages" data-keywords="lemon water lebu jol salt lemon water refreshing drink 50">
+                    <div class="food-card-badge pure-veg">Refreshing</div>
+                    <div class="food-card-img-box"><img src="assets/menu_lemon_water.webp" alt="Lemon Water" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Lemon Water</h3>
+                        <span class="bengali-title">লেমন ওয়াটার</span>
+                        <span class="food-price">₹50</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Lemon%20Water%20(₹50)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 23. Extra Chicken (4P) -->
+                <div class="food-menu-card" data-category="extras" data-keywords="extra chicken 4p murgir mangsho chicken curry side non veg 200">
+                    <div class="food-card-badge popular">4 Pcs</div>
+                    <div class="food-card-img-box"><img src="assets/menu_extra_chicken.webp" alt="Extra Chicken (4P)" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Extra Chicken (4P)</h3>
+                        <span class="bengali-title">চিকেন কারি (4P)</span>
+                        <span class="food-price">₹200</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Extra%20Chicken%204P%20(₹200)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 24. Green Salad -->
+                <div class="food-menu-card" data-category="extras" data-keywords="green salad cucumber tomato onion lemon salad veg 100">
+                    <div class="food-card-badge pure-veg">Fresh</div>
+                    <div class="food-card-img-box"><img src="assets/menu_green_salad.webp" alt="Green Salad" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Green Salad</h3>
+                        <span class="bengali-title">গ্রিন স্যালাড</span>
+                        <span class="food-price">₹100</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Green%20Salad%20(₹100)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 25. Extra Fish (1P) -->
+                <div class="food-menu-card" data-category="extras" data-keywords="extra fish 1p macher jhol mach 1 piece non veg side 100">
+                    <div class="food-card-badge popular">1 Pc</div>
+                    <div class="food-card-img-box"><img src="assets/menu_extra_fish.webp" alt="Extra Fish (1P)" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Extra Fish (1P)</h3>
+                        <span class="bengali-title">মাছ ১ পিস</span>
+                        <span class="food-price">₹100</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Extra%20Fish%201P%20(₹100)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 26. Extra Egg (2P) -->
+                <div class="food-menu-card" data-category="extras" data-keywords="extra egg 2p dimer jhol dim curry 2 piece side 50">
+                    <div class="food-card-badge special">2 Pcs</div>
+                    <div class="food-card-img-box"><img src="assets/menu_extra_egg.webp" alt="Extra Egg (2P)" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Extra Egg (2P)</h3>
+                        <span class="bengali-title">ডিম (২ পিস)</span>
+                        <span class="food-price">₹50</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Extra%20Egg%202P%20(₹50)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 27. Extra Rice -->
+                <div class="food-menu-card" data-category="extras" data-keywords="extra rice bhat rice portion veg side 50">
+                    <div class="food-card-badge popular">1 Portion</div>
+                    <div class="food-card-img-box"><img src="assets/menu_extra_rice.webp" alt="Extra Rice" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Extra Rice</h3>
+                        <span class="bengali-title">এক্সট্রা ভাত</span>
+                        <span class="food-price">₹50</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Extra%20Rice%20(₹50)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 28. Roti / Papad / Biscuit -->
+                <div class="food-menu-card" data-category="extras" data-keywords="roti papad biscuit ruti flatbread side 10">
+                    <div class="food-card-badge pure-veg">Per Pc</div>
+                    <div class="food-card-img-box"><img src="assets/menu_roti_papad_biscuit.webp" alt="Roti / Papad / Biscuit" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Roti / Papad / Biscuit</h3>
+                        <span class="bengali-title">রুটি / পাঁপড় / বিস্কুট</span>
+                        <span class="food-price">₹10</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Roti%20Papad%20Biscuit%20(₹10)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 29. Extra Sabji / Dal / Vaji -->
+                <div class="food-menu-card" data-category="extras" data-keywords="extra sabji dal vaji torkari yellow dal veg side 30">
+                    <div class="food-card-badge pure-veg">Side Bowl</div>
+                    <div class="food-card-img-box"><img src="assets/menu_extra_sabji_dal_vaji.webp" alt="Extra Sabji / Dal / Vaji" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Extra Sabji / Dal / Vaji</h3>
+                        <span class="bengali-title">সবজি / ডাল / ভাজি</span>
+                        <span class="food-price">₹30</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Extra%20Sabji%20Dal%20Vaji%20(₹30)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 30. Butter Dal Fry -->
+                <div class="food-menu-card" data-category="extras" data-keywords="butter dal fry yellow dal tadka butter veg 150">
+                    <div class="food-card-badge chef">Chef Special</div>
+                    <div class="food-card-img-box"><img src="assets/menu_butter_dal_fry.webp" alt="Butter Dal Fry" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Butter Dal Fry</h3>
+                        <span class="bengali-title">বাটার ডাল ফ্রাই</span>
+                        <span class="food-price">₹150</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Butter%20Dal%20Fry%20(₹150)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 31. Tarka (Egg / Veg) -->
+                <div class="food-menu-card" data-category="extras" data-keywords="tarka tadka egg tarka veg tarka dal 150">
+                    <div class="food-card-badge popular">Popular</div>
+                    <div class="food-card-img-box"><img src="assets/menu_tarka_egg_veg.webp" alt="Tarka (Egg / Veg)" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Tarka (Egg / Veg)</h3>
+                        <span class="bengali-title">তরকা (এগ / ভেজ)</span>
+                        <span class="food-price">₹150</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Tarka%20Egg%20Veg%20(₹150)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 32. Extra Misti -->
+                <div class="food-menu-card" data-category="extras" data-keywords="extra misti mishti sweet dessert rosogolla 20">
+                    <div class="food-card-badge pure-veg">Sweet</div>
+                    <div class="food-card-img-box"><img src="assets/menu_extra_misti.webp" alt="Extra Misti" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Extra Misti</h3>
+                        <span class="bengali-title">এক্সট্রা মিষ্টি</span>
+                        <span class="food-price">₹20</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Extra%20Misti%20(₹20)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 33. Plain Rice (Without Thali) -->
+                <div class="food-menu-card" data-category="extras" data-keywords="plain rice without thali bhat rice bowl 80">
+                    <div class="food-card-badge pure-veg">1 Plate</div>
+                    <div class="food-card-img-box"><img src="assets/menu_plain_rice_without_thali.webp" alt="Plain Rice (Without Thali)" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Plain Rice (Without Thali)</h3>
+                        <span class="bengali-title">প্লেন রাইস (থালি ছাড়া)</span>
+                        <span class="food-price">₹80</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Plain%20Rice%20Without%20Thali%20(₹80)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 34. Extra Mutton (4P) -->
+                <div class="food-menu-card" data-category="extras" data-keywords="extra mutton 4p khasi mangsho mutton curry kosha special order 380">
+                    <div class="food-card-badge special">4 Pcs</div>
+                    <div class="food-card-img-box"><img src="assets/menu_extra_mutton.webp" alt="Extra Mutton (4P)" loading="lazy"></div>
+                    <div class="food-card-body">
+                        <h3 class="food-title">Extra Mutton (4P)</h3>
+                        <span class="bengali-title">মটন (স্পেশাল অর্ডার)</span>
+                        <span class="food-price">₹380</span>
+                        <a href="https://wa.me/916295982636?text=Hi%20AJ%20Restaurant,%20I%20want%20to%20order%20Extra%20Mutton%204P%20(₹380)" target="_blank" class="food-order-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+
+
+                    </div>
+
+                    <!-- No Results Fallback -->
+                    <div id="modal-no-results-msg" style="display: none; text-align: center; padding: 40px 20px; color: #aaa;">
+                        <i class="fas fa-search" style="font-size: 2.5rem; margin-bottom: 12px; display: block; color: var(--accent-gold);"></i>
+                        <p>আপনার খোঁজা অনুযায়ী কোনো খাবার পাওয়া যায়নি। অন্য কিছু লিখে খুঁজুন।</p>
+                    </div>
+                </div>
+
+                <!-- Order Timings Banner -->
+                <div id="modal-order-timings" style="max-width: 1200px; margin: 35px auto 40px; padding: 0 15px;">
+                    <div class="order-info-banner glassmorphism">
+                        <div class="order-timing-card">
+                            <div class="timing-icon"><i class="fas fa-clock"></i></div>
+                            <div class="timing-details">
+                                <h4>⏰ Order Timings (অর্ডার সময়সূচী)</h4>
+                                <ul>
+                                    <li><strong>☀️ Lunch:</strong> Any Time You're Hungry!</li>
+                                    <li><strong>🌙 Dinner:</strong> Order 05:00 PM – 06:30 PM <span class="serve-time">(Serve: 9:30 PM – 10:00 PM)</span></li>
+                                    <li><strong>🌅 Breakfast:</strong> Pre-order 09:00 PM – 10:00 PM <span class="serve-time">(Serve Next Morning: 8:30 AM)</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="order-call-box">
+                            <div class="call-badge">Direct Hotline</div>
+                            <h3>Call or WhatsApp to Place Order</h3>
+                            <a href="tel:6295982636" class="order-phone-link">
+                                <i class="fas fa-phone-volume"></i> 6295982636
+                            </a>
+                            <div class="quick-action-btns">
+                                <a href="tel:6295982636" class="direct-call-btn">
+                                    <i class="fas fa-phone"></i> Call Now
+                                </a>
+                                <a href="https://wa.me/916295982636?text=Hello%20AJ%20Restaurant,%20I%20want%20to%20place%20an%20order!" target="_blank" class="direct-wp-btn">
+                                    <i class="fab fa-whatsapp"></i> WhatsApp Order
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Customer Review Photo Upload Modal -->
+    <div class="review-upload-modal" id="review-upload-modal" aria-hidden="true">
+        <div class="review-upload-modal-overlay" id="close-upload-modal-overlay"></div>
+        <div class="review-upload-modal-dialog">
+            <button type="button" class="review-upload-modal-close" id="close-upload-modal-btn" aria-label="Close Review Upload Modal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="review-upload-header">
+                <div class="review-upload-badge-icon">
+                    <i class="fas fa-camera-retro"></i>
+                </div>
+                <h3 class="review-upload-title">Share Your Experience</h3>
+                <p class="review-upload-desc">আমাদের খাবার বা সুন্দর মুহূর্তের ছবি তুলুন বা শেয়ার করুন। রিভিউ অ্যাপ্রুভ হলে ওয়েবসাইটে আপনার ছবিটি সবার সাথে প্রদর্শিত হবে!</p>
+            </div>
+            <form id="customer-review-upload-form" class="review-upload-form">
+                <div class="review-form-field">
+                    <label for="review-customer-name">
+                        <i class="fas fa-user"></i> আপনার নাম / Your Name <span class="review-field-req">*</span>
+                    </label>
+                    <input type="text" id="review-customer-name" name="customerName" placeholder="যেমন: Rahul Sen" required maxlength="50" autocomplete="name">
+                </div>
+
+                <div class="review-form-field">
+                    <label for="review-customer-text">
+                        <i class="fas fa-comment-dots"></i> ছোট মন্তব্য / Short Review (ঐচ্ছিক)
+                    </label>
+                    <input type="text" id="review-customer-text" name="customerText" placeholder="যেমন: খাবার খুবই সুস্বাদু ছিল!" maxlength="140">
+                </div>
+
+                <div class="review-form-field">
+                    <label>
+                        <i class="fas fa-image"></i> ছবি সিলেক্ট করুন / Take Photo <span class="review-field-req">*</span>
+                    </label>
+                    <div class="review-dropzone-box" id="review-dropzone-box">
+                        <input type="file" id="review-photo-input" accept="image/*" class="review-hidden-file-input">
+                        <div class="review-dropzone-empty" id="review-dropzone-empty">
+                            <div class="review-dropzone-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                            <span class="review-dropzone-text">এখানে ট্যাপ করে ছবি তুলুন বা গ্যালারি থেকে বাছুন</span>
+                            <span class="review-dropzone-hint">JPG, PNG, WEBP ফরম্যাট (অটো অপ্টিমাইজড)</span>
+                        </div>
+                        <div class="review-dropzone-preview" id="review-dropzone-preview" style="display: none;">
+                            <img id="review-preview-img" src="" alt="Selected Photo Preview">
+                            <button type="button" class="review-change-photo-btn" id="review-change-photo-btn">
+                                <i class="fas fa-sync-alt"></i> ছবি পরিবর্তন করুন
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-upload-status" id="review-upload-status" style="display: none;"></div>
+
+                <button type="submit" class="review-submit-btn" id="review-submit-btn">
+                    <span class="review-btn-spinner" id="review-btn-spinner" style="display: none;">
+                        <i class="fas fa-circle-notch fa-spin"></i>
+                    </span>
+                    <span class="review-btn-text" id="review-btn-text">
+                        <i class="fas fa-paper-plane"></i> ছবি আপলোড করুন
+                    </span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Promo Poster Modal -->
+    <div class="promo-modal" id="promo-modal">
+        <div class="promo-modal-overlay"></div>
+        <div class="promo-modal-content">
+            <button class="promo-modal-close" id="close-promo-modal-btn" aria-label="Close Promo Modal"><i class="fas fa-times"></i></button>
+            <img src="assets/promo_poster.webp" alt="Janmashtami Celebration Poster - AJ Restaurant & Cafe" class="promo-poster-img">
+        </div>
+    </div>
+
+    <script src="script.js?v=1.5"></script>
+</body>
+</html>
