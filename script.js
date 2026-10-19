@@ -286,40 +286,60 @@ if (prevBtn) {
     });
 }
 
-// Initial setup with default static slides
-updateReviewSliderElements();
+// Initially hide slider buttons until drive reviews are loaded
+if (prevBtn) prevBtn.style.display = 'none';
+if (nextBtn) nextBtn.style.display = 'none';
 
-// Fetch approved online reviews from Google Drive / Sheets API
-async function fetchApprovedReviews() {
-    if (!CUSTOMER_REVIEW_API_URL || !reviewsSliderContainer || !reviewsDotsContainer) return;
+const REVIEWS_CACHE_KEY = 'aj_approved_reviews_cache_v2';
 
-    try {
-        const response = await fetch(CUSTOMER_REVIEW_API_URL, { method: 'GET' });
-        if (!response.ok) return;
-
-        const data = await response.json();
-        if (data.status === 'success' && Array.isArray(data.reviews) && data.reviews.length > 0) {
-            renderReviews(data.reviews);
-        }
-    } catch (err) {
-        console.warn('Could not load online customer reviews, keeping default gallery:', err);
+// Instant initial approved reviews seed so visitors see photos in 0.0 seconds
+const INITIAL_APPROVED_REVIEWS = [
+    {
+        name: "shubhajit debnath",
+        review: "khub valo",
+        imageUrl: "https://lh3.googleusercontent.com/d/18D90Pt4VWDTDuvELRSTBgZ-of_wOES7c"
+    },
+    {
+        name: "rahul debnath",
+        review: "khub valo",
+        imageUrl: "https://lh3.googleusercontent.com/d/1tTzJnW1dKFe44g0P3wiexhT_ZQ2mUqHX"
+    },
+    {
+        name: "rai debnath",
+        review: "khub valo service",
+        imageUrl: "https://lh3.googleusercontent.com/d/1c2sGW-T56GmOwS7dyxEgFklm_OWTOz0k"
     }
-}
+];
+
+let lastRenderedReviewsSignature = '';
 
 function renderReviews(reviews) {
     if (!reviewsSliderContainer || !reviewsDotsContainer || !reviews.length) return;
 
+    // Prevent redundant DOM re-renders if reviews content hasn't changed
+    const currentSignature = JSON.stringify(reviews.map(r => r.imageUrl + r.name));
+    if (currentSignature === lastRenderedReviewsSignature) return;
+    lastRenderedReviewsSignature = currentSignature;
+
     let slidesHtml = '';
     let dotsHtml = '';
+
+    // Eagerly preload the very first active image into browser memory
+    if (reviews[0] && reviews[0].imageUrl) {
+        const preloader = new Image();
+        preloader.src = reviews[0].imageUrl;
+    }
 
     reviews.forEach((rev, idx) => {
         const activeClass = idx === 0 ? 'active' : '';
         const name = escapeReviewHtml(rev.name || 'Valued Customer');
         const quote = rev.review ? `<p class="reviewer-quote">"${escapeReviewHtml(rev.review)}"</p>` : '';
+        // High priority eager loading on first slide, async lazy loading for subsequent slides
+        const loadingAttr = idx === 0 ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"';
 
         slidesHtml += `
             <div class="review-slide ${activeClass}">
-                <img src="${rev.imageUrl}" alt="Customer Review by ${name}" loading="lazy" onerror="this.onerror=null; this.src='assets/review_1.webp';">
+                <img src="${rev.imageUrl}" alt="Customer Review by ${name}" ${loadingAttr} decoding="async">
                 <div class="review-slide-info">
                     <span class="reviewer-badge"><i class="fas fa-check-circle"></i> Customer Photo</span>
                     <span class="reviewer-name"><i class="fas fa-user-circle"></i> ${name}</span>
@@ -334,10 +354,67 @@ function renderReviews(reviews) {
     reviewsSliderContainer.innerHTML = slidesHtml;
     reviewsDotsContainer.innerHTML = dotsHtml;
 
+    if (prevBtn) prevBtn.style.display = reviews.length > 1 ? 'flex' : 'none';
+    if (nextBtn) nextBtn.style.display = reviews.length > 1 ? 'flex' : 'none';
+
     updateReviewSliderElements();
 }
 
-// Fetch reviews on page load
+// 1. Instant Render from Cache or Seed (0.00 seconds!)
+function initInstantReviews() {
+    try {
+        const cached = localStorage.getItem(REVIEWS_CACHE_KEY);
+        if (cached) {
+            const parsed = JSON.parse(cached);
+            if (Array.isArray(parsed) && parsed.length > 0) {
+                renderReviews(parsed);
+                return;
+            }
+        }
+    } catch (e) {
+        console.warn('Cache read error:', e);
+    }
+    // Instant initial seed
+    if (INITIAL_APPROVED_REVIEWS.length > 0) {
+        renderReviews(INITIAL_APPROVED_REVIEWS);
+    }
+}
+
+// 2. Fetch Fresh Approved Reviews in Background (Stale-While-Revalidate)
+async function fetchApprovedReviews() {
+    if (!CUSTOMER_REVIEW_API_URL || !reviewsSliderContainer || !reviewsDotsContainer) return;
+
+    try {
+        const response = await fetch(CUSTOMER_REVIEW_API_URL, { method: 'GET' });
+        if (!response.ok) throw new Error('API response was not ok');
+
+        const data = await response.json();
+        if (data.status === 'success' && Array.isArray(data.reviews)) {
+            if (data.reviews.length > 0) {
+                renderReviews(data.reviews);
+                try {
+                    localStorage.setItem(REVIEWS_CACHE_KEY, JSON.stringify(data.reviews));
+                } catch (e) {}
+            } else if (!lastRenderedReviewsSignature) {
+                reviewsSliderContainer.innerHTML = `
+                    <div class="reviews-empty-placeholder">
+                        <i class="fas fa-camera"></i>
+                        <span>এখনো কোনো রিভিউ ছবি আপলোড হয়নি। নিচের বাটনে ট্যাপ করে সবার আগে আপনার ছবি দিন!</span>
+                    </div>
+                `;
+                if (prevBtn) prevBtn.style.display = 'none';
+                if (nextBtn) nextBtn.style.display = 'none';
+            }
+        }
+    } catch (err) {
+        console.warn('Could not refresh online customer reviews:', err);
+    }
+}
+
+// Immediate zero-delay load
+initInstantReviews();
+
+// Background silent refresh for any newly approved reviews
 fetchApprovedReviews();
 
 // ============================================================
@@ -1105,7 +1182,7 @@ if (reviewUploadForm) {
 
             if (data.status === 'success') {
                 showReviewUploadStatus(
-                    `<i class="fas fa-check-circle"></i> ধন্যবাদ <strong>${escapeReviewHtml(name)}</strong>! আপনার ছবি ও রিভিউ সফলভাবে জমা হয়েছে।`,
+                    `<i class="fas fa-check-circle"></i> ধন্যবাদ <strong>${escapeReviewHtml(name)}</strong>! আপনার ছবি সফলভাবে জমা হয়েছে। ভেরিফাইয়ের পর ওয়েবসাইটে দেখানো হবে।`,
                     'success'
                 );
 

@@ -7,7 +7,10 @@
     <link rel="icon" type="image/webp" href="assets/aj_logo.webp">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css?v=1.4">
+    <link rel="preconnect" href="https://lh3.googleusercontent.com" crossorigin>
+    <link rel="preconnect" href="https://script.google.com" crossorigin>
+    <link rel="dns-prefetch" href="https://lh3.googleusercontent.com">
+    <link rel="stylesheet" href="styles.css?v=1.9">
 </head>
 <body class="no-scroll">
     <!-- Preloader Screen -->
@@ -630,17 +633,9 @@
         <h2 class="section-title">Customer Review Photos</h2>
         <div class="reviews-slider-container">
             <div class="reviews-slider">
-                <div class="review-slide active">
-                    <img src="assets/review_1.webp" alt="Customer Review 1">
-                </div>
-                <div class="review-slide">
-                    <img src="assets/review_2.webp" alt="Customer Review 2">
-                </div>
-                <div class="review-slide">
-                    <img src="assets/review_3.webp" alt="Customer Review 3">
-                </div>
-                <div class="review-slide">
-                    <img src="assets/aj_banner_3.webp" alt="Customer Review 4">
+                <div class="reviews-loading-placeholder">
+                    <i class="fas fa-circle-notch fa-spin"></i>
+                    <span>Customer Reviews লোড হচ্ছে...</span>
                 </div>
             </div>
             
@@ -649,12 +644,7 @@
             <button class="slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
             
             <!-- Slider Dots -->
-            <div class="slider-dots">
-                <span class="dot active" data-index="0"></span>
-                <span class="dot" data-index="1"></span>
-                <span class="dot" data-index="2"></span>
-                <span class="dot" data-index="3"></span>
-            </div>
+            <div class="slider-dots"></div>
         </div>
         <div class="reviews-cta-wrapper">
             <button type="button" class="modern-upload-review-btn" id="open-upload-review-btn" title="Upload Customer Review Photo">
@@ -1443,6 +1433,6 @@
         </div>
     </div>
 
-    <script src="script.js?v=1.5"></script>
+    <script src="script.js?v=1.9"></script>
 </body>
 </html>

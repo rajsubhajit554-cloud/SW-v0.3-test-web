@@ -1738,7 +1738,10 @@ section {
     z-index: 1;
     transition: opacity 1s ease-in-out;
     pointer-events: none;
-    padding: 0;
+    padding: 8px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
 }
 
 .reviews-slider .review-slide.active {
@@ -1749,20 +1752,21 @@ section {
 
 .reviews-slider .review-slide img {
     width: 100%;
-    height: 100%;
+    flex: 1 1 0%;
+    min-height: 0;
     object-fit: contain;
     border: none;
     background: none;
     filter: drop-shadow(0 12px 32px rgba(0, 0, 0, 0.65));
 }
 
-/* Customer Review Slide Information Overlay */
+/* Customer Review Slide Information Box - Stays BELOW the image */
 .reviews-slider .review-slide .review-slide-info {
-    position: absolute;
-    bottom: 12px;
-    left: 12px;
-    right: 12px;
-    background: rgba(18, 14, 10, 0.88);
+    position: relative;
+    width: 100%;
+    flex-shrink: 0;
+    margin-top: 8px;
+    background: rgba(18, 14, 10, 0.92);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 215, 0, 0.35);
@@ -1773,8 +1777,9 @@ section {
     gap: 4px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
     z-index: 5;
-    pointer-events: none;
+    pointer-events: auto;
     text-align: left;
+    box-sizing: border-box;
 }
 
 .reviews-slider .review-slide .review-slide-info .reviewer-badge {
@@ -1812,10 +1817,36 @@ section {
     -webkit-box-orient: vertical;
 }
 
+/* Loading & Empty Placeholders for Reviews Slider */
+.reviews-slider .reviews-loading-placeholder,
+.reviews-slider .reviews-empty-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    width: 100%;
+    height: 100%;
+    color: var(--accent-gold, #ffd700);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    background: rgba(22, 18, 14, 0.7);
+    border-radius: var(--radius-md);
+    border: 1px dashed rgba(255, 215, 0, 0.25);
+    text-align: center;
+    padding: 20px;
+}
+
+.reviews-slider .reviews-loading-placeholder i,
+.reviews-slider .reviews-empty-placeholder i {
+    font-size: 2.2rem;
+    color: #ffd700;
+}
+
 /* ---- Slider Buttons ---- */
 .slider-btn {
     position: absolute;
-    top: 50%;
+    top: 42%;
     transform: translateY(-50%);
     background: rgba(18, 18, 18, 0.85);
     border: 1.5px solid var(--accent-gold);
@@ -1854,7 +1885,7 @@ section {
         padding: 0 10px;
     }
     .reviews-slider {
-        height: 350px;
+        height: 420px;
     }
     .slider-btn {
         width: 38px;
